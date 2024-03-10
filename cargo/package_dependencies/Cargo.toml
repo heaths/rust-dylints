@@ -1,0 +1,24 @@
+[package]
+name = "package_dependencies"
+version = "0.1.0"
+authors = ["Heath Stewart (github.com/heaths)"]
+description = "Require all package dependencies to inherit from a workspace"
+edition = "2021"
+publish = false
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+clippy_utils = { workspace = true }
+dylint_linting = "2.6.1"
+if_chain = "1.0.2"
+
+[dev-dependencies]
+dylint_testing = "2.6.1"
+
+[features]
+rlib = ["dylint_linting/constituent"]
+
+[package.metadata.rust-analyzer]
+rustc_private = true

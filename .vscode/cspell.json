@@ -1,0 +1,21 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "cdylib",
+    "clippy",
+    "dylint",
+    "rlib",
+    "rustc",
+    "rustlang",
+    "rustup"
+  ],
+  "overrides": [
+    {
+      "filename": "**/*.md",
+      "dictionaries": [
+        "rust"
+      ]
+    }
+  ]
+}

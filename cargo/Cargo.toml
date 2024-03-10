@@ -1,0 +1,27 @@
+[package]
+name = "cargo"
+version = "0.1.0"
+authors = ["Heath Stewart (github.com/heaths)"]
+description = "Custom lints for crates"
+edition = "2021"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+dylint_linting = "2.6.1"
+package_dependencies = { path = "package_dependencies", features = ["rlib"] }
+
+[workspace]
+members = [
+    "package_dependencies",
+]
+
+[workspace.dependencies]
+clippy_utils = { git = "https://github.com/rust-lang/rust-clippy", rev = "60cb29c5e4f9772685c9873752196725c946a849" }
+
+[workspace.metadata.dylint]
+libraries = [
+    { path = "../cargo" },
+]
